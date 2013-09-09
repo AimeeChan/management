@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=5000, initial-scale=1, user-scalable=no, target-densitydpi=high-dpi"/>
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<title>
+            Main
+</title>
+<link rel="stylesheet" href="stylesheets/general_enclosed_foundicons.css"/>
+<link rel="stylesheet" href="css/lib/jquery.mobile-1.3.1.min.css"/>
+<link rel="stylesheet" href="css/themes/jquerymobile-swatch.min.css"/>
+<!--    <style>
+        h1,a{
+            font-size: 2em;
+        }
+    </style>-->
+ <script type="text/javascript" src="cordova.js"></script>
+<script src="js/jquery-1.9.1.min.js">
+</script>
+<script src="js/jquery.mobile-1.3.1.min.js">
+</script>
+</head>
+<body>
+<div data-role="page" class="page" data-theme="b"  data-add-back-btn="true" data-back-btn-text="后退">
+	<div data-role="header" data-id="header" class="header" data-position="fixed">
+		<h1> 人员到岗 </h1>
+        <a data-role="button" href="index.html#renyuanpage" class="back-btn" data-ajax="false" class="ui-btn-left" data-inline="true">后退</a>
+	</div>
+	<!-- /header -->
+	<section>
+	<iframe id="iFrame1" src="http://112.96.28.126:8080/renyuan/m_index.jsp" onload="this.height=iFrame1.document.body.scrollHeight"width="100%"  frameborder="0">
+	</iframe>
+        <script>
+            $(document).ready(function(){
+
+                $.mobile.loading('show', {
+                    text: 'Loading....',
+                    textVisible: true,
+                    textonly: true,
+                    theme: 'b',
+                    html: ""
+                });
+                $("#iFrame1").load(function(){
+                    $.mobile.loading('hide');
+                })
+            });
+        </script>
+	</section>
+	
+</div>
+
+</div>
+
+   
+</body>
+
+</html>
